@@ -8,6 +8,7 @@ import java.util.stream.Collectors;
 import org.springframework.stereotype.Repository;
 
 import com.ibproject.innternetbanking.model.Payee;
+import com.ibproject.innternetbanking.util.IBUtils;
 
 @Repository
 public class PayeeDao {
@@ -30,7 +31,7 @@ public class PayeeDao {
 		id = id +1;
 		payee.setId(id);
 		payee.setIsOTPVerified(Boolean.FALSE);
-		payee.setOtp(12345);
+		payee.setOtp(IBUtils.generateOTP());
 		listOfPayees.put(id, payee);
 		return payee;
 	}
