@@ -29,6 +29,8 @@ public class PayeeDao {
 	public Payee addPayee(Payee payee){
 		id = id +1;
 		payee.setId(id);
+		payee.setIsOTPVerified(Boolean.FALSE);
+		payee.setOtp(12345);
 		listOfPayees.put(id, payee);
 		return payee;
 	}
@@ -41,6 +43,16 @@ public class PayeeDao {
 	public Payee deletePayee(Integer id){
 		Payee payee = listOfPayees.remove(id);
 		return payee;
+	}
+
+	public Payee verifyOTP(Integer payeeId, Integer otp) {
+		
+		Payee p = listOfPayees.get(payeeId);
+		if(p.getOtp().equals(otp)){
+			p.setIsOTPVerified(Boolean.TRUE);
+			p.setOtp(null);
+		}
+		return null;
 	}
 
 }

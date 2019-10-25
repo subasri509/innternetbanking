@@ -54,6 +54,12 @@ public class PayeeController {
 		return payeeService.deletePayee(id);
 	}
 	
+	@RequestMapping(path = "/verifypayee/{payeeId}/{otp}", method = RequestMethod.POST)
+	public Payee verifyOTP(@PathVariable Integer payeeId, @PathVariable Integer otp){
+		return payeeService.verifyOTP(payeeId, otp);
+		
+	}
+	
 	@ResponseStatus(HttpStatus.BAD_REQUEST)
 	@ExceptionHandler(MethodArgumentNotValidException.class)
 	public Map<String, String> handleValidationExceptions(

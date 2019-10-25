@@ -34,4 +34,8 @@ public class PayeeService {
 		return payeeDao.deletePayee(id);
 	}
 
+	public Payee verifyOTP(Integer payeeId, Integer otp) {
+		return payeeDao.verifyOTP(payeeId, otp);
+	}
+
 }

@@ -23,6 +23,8 @@ public class Payee {
 	private String ifscCode;
 	
 	private Boolean isActive;
+	private Boolean isOTPVerified;
+	private Integer otp;
 	private String createdTime;
 	private String updatedTime;
 	public Integer getId() {
@@ -60,6 +62,18 @@ public class Payee {
 	}
 	public void setIsActive(Boolean isActive) {
 		this.isActive = isActive;
+	}
+	public Boolean getIsOTPVerified() {
+		return isOTPVerified;
+	}
+	public void setIsOTPVerified(Boolean isOTPVerified) {
+		this.isOTPVerified = isOTPVerified;
+	}
+	public Integer getOtp() {
+		return otp;
+	}
+	public void setOtp(Integer otp) {
+		this.otp = otp;
 	}
 	public String getCreatedTime() {
 		return createdTime;
