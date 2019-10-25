@@ -1,10 +1,25 @@
 package com.ibproject.innternetbanking.model;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
+
 public class Payee {
 	private Integer id;
+	
+	@NotBlank(message = "Name is required")
 	private String name;
+	
+	@NotBlank(message = "Nick Name is required")
+	@Pattern(regexp = "[A-Za-z0-9]+", message = "Nick name must be Alphanumeric only")
 	private String nickName;
+	
+	@NotBlank(message = "Account No is required.")
+	@Size(min = 12, max=12, message = "Account No length must be 12.")
 	private Long accountNo;
+	
+	@NotBlank(message = "IFSC Code is required")
+	@Pattern(regexp = "[A-Za-z0-9]+", message = "Nick name must be Alphanumeric only")
 	private String ifscCode;
 	
 	private Boolean isActive;
