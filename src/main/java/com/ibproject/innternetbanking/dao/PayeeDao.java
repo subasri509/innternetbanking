@@ -32,5 +32,15 @@ public class PayeeDao {
 		listOfPayees.put(id, payee);
 		return payee;
 	}
+	
+	public Payee updatePayee(Payee payee){
+		listOfPayees.put(payee.getId(), payee);
+		return listOfPayees.get(payee.getId());
+	}
+	
+	public Payee deletePayee(Integer id){
+		Payee payee = listOfPayees.remove(id);
+		return payee;
+	}
 
 }

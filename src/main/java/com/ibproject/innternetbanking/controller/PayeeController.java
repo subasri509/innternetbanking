@@ -32,5 +32,15 @@ public class PayeeController {
 	public Payee addPayee(@RequestBody Payee payee){
 		return payeeService.addPayee(payee);
 	}
+	
+	@RequestMapping(path = "/payee/{id}", method = RequestMethod.PUT)
+	public Payee updatePayee(@RequestBody Payee payee){
+		return payeeService.updatePayee(payee);
+	}
+	
+	@RequestMapping(path = "/payee/{id}", method = RequestMethod.DELETE)
+	public Payee deletePayee(@PathVariable Integer id){
+		return payeeService.deletePayee(id);
+	}
 
 }

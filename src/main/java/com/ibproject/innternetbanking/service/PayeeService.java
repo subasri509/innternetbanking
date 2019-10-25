@@ -25,5 +25,13 @@ public class PayeeService {
 	public Payee addPayee(Payee payee){
 		return payeeDao.addPayee(payee);
 	}
+	
+	public Payee updatePayee(Payee payee){
+		return payeeDao.updatePayee(payee);
+	}
+	
+	public Payee deletePayee(Integer id){
+		return payeeDao.deletePayee(id);
+	}
 
 }
