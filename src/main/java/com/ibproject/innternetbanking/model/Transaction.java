@@ -1,10 +1,14 @@
 package com.ibproject.innternetbanking.model;
 
+import java.util.Date;
+
 public class Transaction {
 	
 	private Integer id;
-	private String date;
-	private String payeeAcNo;
+	private String payerName;
+	private Long payerAccountNo;
+	private Date date;
+	private Long payeeAcNo;
 	private String payeeName;
 	private String toIFSC;
 	private Integer amount;
@@ -15,16 +19,28 @@ public class Transaction {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public String getDate() {
+	public String getPayerName() {
+		return payerName;
+	}
+	public void setPayerName(String payerName) {
+		this.payerName = payerName;
+	}
+	public Long getPayerAccountNo() {
+		return payerAccountNo;
+	}
+	public void setPayerAccountNo(Long payerAccountNo) {
+		this.payerAccountNo = payerAccountNo;
+	}
+	public Date getDate() {
 		return date;
 	}
-	public void setDate(String date) {
+	public void setDate(Date date) {
 		this.date = date;
 	}
-	public String getPayeeAcNo() {
+	public Long getPayeeAcNo() {
 		return payeeAcNo;
 	}
-	public void setPayeeAcNo(String payeeAcNo) {
+	public void setPayeeAcNo(Long payeeAcNo) {
 		this.payeeAcNo = payeeAcNo;
 	}
 	public String getPayeeName() {
